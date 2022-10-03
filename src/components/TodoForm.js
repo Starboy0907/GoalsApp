@@ -12,15 +12,17 @@ function TodoForm(props) {
   const handleChange = e => {
     setInput(e.target.value);
   };
-
+  
   const handleSubmit = e => {   //processes submition
     e.preventDefault();  //validates for not blank
-
+  
+    
     let x = document.forms["form"]["text"].value;
     if (x === "") {
       alert("Goal must be filled out");
       return false
     }
+
   
   props.onSubmit({            //attaches properties to the input, id and value
     id: Math.floor(Math.random() * 10000),  //generate random value
